@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */; };
+		1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */; };
+		1D343EA52B27C8720005E8B4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */; };
 		1DA10D302B15184400B46B77 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D2F2B15184400B46B77 /* FamilyView.swift */; };
 		1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D312B1532F900B46B77 /* NursesView.swift */; };
 		1DA10D342B15332100B46B77 /* DoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D332B15332100B46B77 /* DoctorView.swift */; };
 		1DA10D382B153F0A00B46B77 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */; };
-		1DA10D3A2B15419E00B46B77 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D392B15419E00B46B77 /* UserDefaultManager.swift */; };
 		1DA10D3C2B17EFDD00B46B77 /* FamilyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D3B2B17EFDD00B46B77 /* FamilyInfoView.swift */; };
 		1DA10D3E2B17FAD300B46B77 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D3D2B17FAD300B46B77 /* SignUpView.swift */; };
 		1DF9D2282B02A0CA00EB18B4 /* MedicalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9D2272B02A0CA00EB18B4 /* MedicalAppApp.swift */; };
@@ -24,11 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1D343EA22B27C3D70005E8B4 /* SMU_DB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMU_DB.xcdatamodel; sourceTree = "<group>"; };
+		1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		1DA10D2F2B15184400B46B77 /* FamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyView.swift; sourceTree = "<group>"; };
 		1DA10D312B1532F900B46B77 /* NursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursesView.swift; sourceTree = "<group>"; };
 		1DA10D332B15332100B46B77 /* DoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorView.swift; sourceTree = "<group>"; };
 		1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		1DA10D392B15419E00B46B77 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		1DA10D3B2B17EFDD00B46B77 /* FamilyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyInfoView.swift; sourceTree = "<group>"; };
 		1DA10D3D2B17FAD300B46B77 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1DF9D2242B02A0CA00EB18B4 /* MedicalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +60,7 @@
 		1DF9D21B2B02A0CA00EB18B4 = {
 			isa = PBXGroup;
 			children = (
+				1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */,
 				1DF9D2262B02A0CA00EB18B4 /* MedicalApp */,
 				1DF9D2252B02A0CA00EB18B4 /* Products */,
 			);
@@ -111,7 +116,7 @@
 		1DF9D23C2B02B27300EB18B4 /* DBManager */ = {
 			isa = PBXGroup;
 			children = (
-				1DA10D392B15419E00B46B77 /* UserDefaultManager.swift */,
+				1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */,
 			);
 			path = DBManager;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */,
+				1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -220,15 +226,17 @@
 				1DA10D302B15184400B46B77 /* FamilyView.swift in Sources */,
 				1DF9D2282B02A0CA00EB18B4 /* MedicalAppApp.swift in Sources */,
 				1DF9D2462B02C55600EB18B4 /* MainView.swift in Sources */,
+				1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */,
 				1DF9D2432B02B39200EB18B4 /* Extensions.swift in Sources */,
 				1DA10D3E2B17FAD300B46B77 /* SignUpView.swift in Sources */,
-				1DA10D3A2B15419E00B46B77 /* UserDefaultManager.swift in Sources */,
+				1D343EA52B27C8720005E8B4 /* SignUpViewModel.swift in Sources */,
 				1DF9D2412B02B36C00EB18B4 /* Utilitis.swift in Sources */,
 				1DF9D22F2B02A0CA00EB18B4 /* SignInView.swift in Sources */,
 				1DA10D342B15332100B46B77 /* DoctorView.swift in Sources */,
 				1DA10D382B153F0A00B46B77 /* SignInViewModel.swift in Sources */,
 				1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */,
 				1DA10D3C2B17EFDD00B46B77 /* FamilyInfoView.swift in Sources */,
+				1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D343EA22B27C3D70005E8B4 /* SMU_DB.xcdatamodel */,
+			);
+			currentVersion = 1D343EA22B27C3D70005E8B4 /* SMU_DB.xcdatamodel */;
+			path = SMU_DB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1DF9D21C2B02A0CA00EB18B4 /* Project object */;
 }

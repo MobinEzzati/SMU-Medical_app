@@ -178,18 +178,17 @@ struct UserNameAndPasswordView: View {
                         Image(systemName: "questionmark.circle")
                         Text("Need Help")
                     }
-                    
-                    VStack {
+                    NavigationLink( destination: SignUpView()) {
                         
-                        Image(systemName: "person.badge.plus")
-                        Text("Sign Up")
-                    }
-                    .onTapGesture {
-                        NavigationLink(destination: SignUpView()) {
+                        VStack {
+                            
                             Image(systemName: "person.badge.plus")
                             Text("Sign Up")
                         }
-                    }
+                        
+                    }.foregroundStyle(.black)
+
+
                 }
             }
         }.frame(width: screenWidth - 10, height: screenHeight/3 + 50)
