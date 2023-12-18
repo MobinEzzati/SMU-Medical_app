@@ -18,14 +18,17 @@ import CoreData
 import SwiftUI
 
 struct SignInView: View {
+    @Binding var path: NavigationPath
+    @State var mainPath = NavigationPath()
+
     
     var body: some View {
    
         NavigationStack {
             ScrollView{
                 
-                           VStack(spacing:20){
-                               HStack(){
+            VStack(spacing:18){
+                    HStack(){
                                    
                                    Image("Earth")
                                        .resizable()
@@ -64,7 +67,7 @@ struct SignInView: View {
                 
                 Spacer()
             }.frame(width:UIScreen.main.bounds.size.height
-                    ,height: UIScreen.main.bounds.size.height + 20).padding(.top)
+                    ,height: UIScreen.main.bounds.size.height + 15).padding(.top)
 
             
         }
@@ -81,6 +84,7 @@ struct HybridTextField:  View {
     @Binding var text: String
         @State var isSecure: Bool = true
         var titleKey: String
+
         var body: some View {
             ZStack(alignment: .trailing){
                 Group{
@@ -108,11 +112,16 @@ struct HybridTextField:  View {
 }
 
 struct UserNameAndPasswordView: View {
-    @State private var stringOfTextField: String = String()
+    @State private var userName = ""
     @State private var isOn = false
     @State private var isDetailActive = false
     @State private var password = ""
     @State private var isSecureText = false
+    @ObservedObject var signInVm = SignInViewModel()
+    @State var mainPath = NavigationPath()
+
+
+
     
     var body: some View {
         VStack(){
@@ -121,7 +130,7 @@ struct UserNameAndPasswordView: View {
                     Text("Username")
                     Text("ForgetUserName?")
                 }.padding(.top)
-                TextField("Enter UserName . . .", text: $stringOfTextField)
+                TextField("Enter UserName . . .", text: $userName)
                     .padding()
                     .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                                 
@@ -147,20 +156,23 @@ struct UserNameAndPasswordView: View {
             }
             VStack{
                 
-                NavigationLink(destination: MainView()) {
                     Button(action: {
-                        print("Login tapped")
+                        signInVm.checkUserExist(userName: userName,
+                                                password: password)
+                        
+                        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+                        print(paths[0])
+
                         
                     }) {
-                        NavigationLink(destination: MainView()) {
-                            
+                    
                             Text("Log in ")
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .font(.system(size: 18))
                                 .padding()
                                 .foregroundColor(.white)
                             
-                        }
+                        
                         
                         
                     }
@@ -168,7 +180,6 @@ struct UserNameAndPasswordView: View {
                     .cornerRadius(10)
                     .padding()
                     
-                }
                 
     
   
@@ -190,7 +201,11 @@ struct UserNameAndPasswordView: View {
 
 
                 }
-            }
+            }.navigationDestination(
+                isPresented: $signInVm.isExsit,
+                destination: {
+                    MainView(path: $mainPath)
+                })
         }.frame(width: screenWidth - 10, height: screenHeight/3 + 50)
         VStack(alignment:.trailing){
             InfoCell()
@@ -243,5 +258,14 @@ struct UserNameAndPasswordView: View {
 
 
 #Preview {
-    SignInView()
+    
+    struct Preview: View {
+        @State var path = NavigationPath()
+
+        var body: some View {
+            SignInView(path: $path)
+        }
+    }
+
+    return Preview()
 }

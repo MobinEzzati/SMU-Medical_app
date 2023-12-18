@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @State  private var firstName: String  = ""
+    @State  private var lastName = ""
+    @State  private var userName = ""
+    @State  private var password = ""
+    @State  private var confirmPassword = ""
+    @State  private var email = ""
+    @State  private var isExsits = false
+    @State var path = NavigationPath()
+    @State var gotoMaineView = false
+    @ObservedObject  var signUpViewModel = SignUpViewModel()
+
+    
     var body: some View {
-        @State  var firstName = ""
-        @State  var lastName = ""
-        @State  var userName = ""
-        @State  var password = ""
-        @State  var confirmPassword = ""
-        @State  var email = ""
-        @State  var isExsits = false
-        @ObservedObject  var signUpViewModel = SignUpViewModel()
+        
+        
         NavigationStack {
             VStack(spacing: 20){
                 
@@ -39,47 +45,43 @@ struct SignUpView: View {
                     .padding()
                     .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                 
-              
-                    Button(action: {
-                        
-                        print("this is test")
-                        print(firstName)
-
-                        if !signUpViewModel.checkUserInfo(userName: userName) {
-                            signUpViewModel.saveUserdata(userName: userName,
-                                                         firstName:firstName,
-                                                         lastName: lastName,
-                                                         password: password
-                                                        )
-            
-                        }else {
-                            print("we already have this item")
-
-                        }
-                        
-                        
-                    }) {
-                        
-                            
-                            Text("Sign up ")
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .font(.system(size: 18))
-                                .padding()
-                                .foregroundColor(.white)
-                            
-                        
-                        
-                        
-                    }
-                    .background(Color.gray) // If you have this
-                    .cornerRadius(10)
-                    .padding()
-              
-
-
+                
+                Button(action: {
+                    
+                        signUpViewModel.addUser(userName: userName,
+                                                                    firstName:firstName,
+                                                                    lastName: lastName,
+                                                                    email: email,
+                                                                    password: password
+                                                                        )
+//                    print(signUpViewModel.isSignUped)
+                })
+                {
+                    
+                    //                        NavigationLink(destination: MainView(), isActive: $signUpViewModel.isSignUped) {
+                    
+                    Text("Sign up ")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .font(.system(size: 18))
+                        .padding()
+                        .foregroundColor(.white)
+                    
+                    //                        }
+                    
+                }
+                .background(Color.gray) // If you have this
+                .cornerRadius(10)
+                .padding()
+                
+                
+                
             }.navigationTitle("Sign Up")
-            .padding()
-            
+                .padding()
+                .navigationDestination(
+                    isPresented: $signUpViewModel.isSignUped,
+                    destination: {
+                        SignInView(path: $path)
+                    })
         }
     }
 }

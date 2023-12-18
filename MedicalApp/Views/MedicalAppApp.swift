@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct MedicalAppApp: App {
+    @State var path = NavigationPath()
 
+    
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            SignInView(path: $path)
         }
     }
 }

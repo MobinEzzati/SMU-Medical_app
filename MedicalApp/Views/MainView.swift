@@ -11,6 +11,7 @@ struct MainView: View {
     let columns: [GridItem] = Array(repeating: .init(.flexible( maximum: 160)), count: 2)
     
     let relativePeople = ["Family", "Doctor","Nurse", "Events"]
+    @Binding var path: NavigationPath
 
     var body: some View {
         NavigationStack{
@@ -115,6 +116,6 @@ struct SquareCell: View {
 }
 
 
-#Preview {
-    MainView()
-}
+//#Preview {
+//  MainView(path: )
+//}

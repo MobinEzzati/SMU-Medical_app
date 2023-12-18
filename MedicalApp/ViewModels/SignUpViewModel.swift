@@ -11,62 +11,57 @@ import CoreData
 
 class SignUpViewModel: ObservableObject {
     @Published var items: [UserEntity] = []
-
-    private let coreDataManager = CoreDataStack.shared
+    @Published var isSignUped = false 
     
-    init(){
-        
-        fetchData() 
-        
-    }
+    var firstName = "this is test"
     
-    func fetchData() {
-        
-        let fetchRequest: NSFetchRequest<UserEntity>  = UserEntity.fetchRequest()
-        
-        do {
-            
-            items = try coreDataManager.viewContext.fetch(fetchRequest)
-            print(items.first)
-            
-        }catch {
-            
-            print("Error fetching data: \(error)")
-
+    
+    func addUser(userName: String, firstName: String, lastName: String, email: String, password: String) {
+        guard !userName.isEmpty,
+              !firstName.isEmpty,
+              !lastName.isEmpty,
+              !email.isEmpty,
+              !password.isEmpty else {
+            // Handle the case where any of the parameters are nil or empty
+            print("One or more parameters are nil or empty")
+            return
         }
         
-    }
-    
-    func deleteAllRecords() {
-        
-    }
-    
-    func checkUserInfo (userName:String) -> Bool{
-        
-        let fetchRequest : NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "userName == %@", userName)
-        
-        do {
-            
-            let count = try coreDataManager.viewContext.count(for: fetchRequest)
-            return count > 0
-            
-        }catch {
-            print("Error checking for record existence: \(error)")
-            return false
+
+        if !checkDublication(userName: userName) {
+            let user = UserEntity(context: CoreDataStack.shared.persistentContainer.viewContext)
+            user.userName = userName
+            user.firstName = firstName
+            user.lastName = lastName
+            user.email = email
+            user.password = password
+
+            CoreDataStack.shared.save()
+            Task {
+ 
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                isSignUped = true
+
+            }
+            print("We Created new user in our database ")
+
+        } else {
+            print("We already have this item in our database")
         }
-        
-       
     }
-    
-    func saveUserdata( userName:String ,firstName:String ,lastName:String, password:String) {
-        
-        let newUser = UserEntity(context: coreDataManager.viewContext)
-        newUser.userName = userName
-        newUser.firstName = firstName
-        newUser.lastName  = lastName
-        newUser.password = password
-        coreDataManager.saveContext()
+
+    func checkDublication(userName:String) -> Bool{
+        var isDouble = false ;
+
+
+         items = CoreDataStack.shared.getAllUser()
+        items.forEach { user in
+            if user.userName == userName {
+                isDouble = true
+            }
+            
+        }
+        print(isDouble)
+        return isDouble
     }
-    
 }

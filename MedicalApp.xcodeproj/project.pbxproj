@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0BCDDA2B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD62B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift */; };
+		1D0BCDDB2B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD72B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift */; };
+		1D0BCDDC2B30131D00C1D414 /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD82B30131D00C1D414 /* UserEntity+CoreDataClass.swift */; };
+		1D0BCDDD2B30131D00C1D414 /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD92B30131D00C1D414 /* UserEntity+CoreDataProperties.swift */; };
 		1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */; };
 		1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */; };
 		1D343EA52B27C8720005E8B4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0BCDD62B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D0BCDD72B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D0BCDD82B30131D00C1D414 /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D0BCDD92B30131D00C1D414 /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1D343EA22B27C3D70005E8B4 /* SMU_DB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMU_DB.xcdatamodel; sourceTree = "<group>"; };
 		1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 		1DF9D21B2B02A0CA00EB18B4 = {
 			isa = PBXGroup;
 			children = (
+				1D0BCDD62B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift */,
+				1D0BCDD72B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift */,
+				1D0BCDD82B30131D00C1D414 /* UserEntity+CoreDataClass.swift */,
+				1D0BCDD92B30131D00C1D414 /* UserEntity+CoreDataProperties.swift */,
 				1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */,
 				1DF9D2262B02A0CA00EB18B4 /* MedicalApp */,
 				1DF9D2252B02A0CA00EB18B4 /* Products */,
@@ -227,12 +239,16 @@
 				1DF9D2282B02A0CA00EB18B4 /* MedicalAppApp.swift in Sources */,
 				1DF9D2462B02C55600EB18B4 /* MainView.swift in Sources */,
 				1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */,
+				1D0BCDDA2B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift in Sources */,
+				1D0BCDDC2B30131D00C1D414 /* UserEntity+CoreDataClass.swift in Sources */,
 				1DF9D2432B02B39200EB18B4 /* Extensions.swift in Sources */,
 				1DA10D3E2B17FAD300B46B77 /* SignUpView.swift in Sources */,
 				1D343EA52B27C8720005E8B4 /* SignUpViewModel.swift in Sources */,
 				1DF9D2412B02B36C00EB18B4 /* Utilitis.swift in Sources */,
 				1DF9D22F2B02A0CA00EB18B4 /* SignInView.swift in Sources */,
+				1D0BCDDB2B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift in Sources */,
 				1DA10D342B15332100B46B77 /* DoctorView.swift in Sources */,
+				1D0BCDDD2B30131D00C1D414 /* UserEntity+CoreDataProperties.swift in Sources */,
 				1DA10D382B153F0A00B46B77 /* SignInViewModel.swift in Sources */,
 				1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */,
 				1DA10D3C2B17EFDD00B46B77 /* FamilyInfoView.swift in Sources */,
@@ -380,7 +396,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
@@ -419,7 +435,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
