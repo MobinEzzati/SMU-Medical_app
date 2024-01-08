@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0BCDDA2B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD62B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift */; };
-		1D0BCDDB2B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD72B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift */; };
-		1D0BCDDC2B30131D00C1D414 /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD82B30131D00C1D414 /* UserEntity+CoreDataClass.swift */; };
-		1D0BCDDD2B30131D00C1D414 /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BCDD92B30131D00C1D414 /* UserEntity+CoreDataProperties.swift */; };
+		1D25EF0B2B4A777A00C8DA30 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D25EF0A2B4A777A00C8DA30 /* EventView.swift */; };
 		1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */; };
 		1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */; };
 		1D343EA52B27C8720005E8B4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */; };
+		1D5F1D3E2B34015E00FD9BDE /* FamilyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5F1D3D2B34015E00FD9BDE /* FamilyViewModel.swift */; };
+		1D5F1D402B34060200FD9BDE /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5F1D3F2B34060200FD9BDE /* FamilyModel.swift */; };
 		1DA10D302B15184400B46B77 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D2F2B15184400B46B77 /* FamilyView.swift */; };
 		1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D312B1532F900B46B77 /* NursesView.swift */; };
 		1DA10D342B15332100B46B77 /* DoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D332B15332100B46B77 /* DoctorView.swift */; };
 		1DA10D382B153F0A00B46B77 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */; };
-		1DA10D3C2B17EFDD00B46B77 /* FamilyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D3B2B17EFDD00B46B77 /* FamilyInfoView.swift */; };
+		1DA10D3C2B17EFDD00B46B77 /* FamilyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D3B2B17EFDD00B46B77 /* FamilyForm.swift */; };
 		1DA10D3E2B17FAD300B46B77 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D3D2B17FAD300B46B77 /* SignUpView.swift */; };
+		1DA697062B38B6A20007D652 /* FamilyMemeberInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA697052B38B6A20007D652 /* FamilyMemeberInfo.swift */; };
 		1DF9D2282B02A0CA00EB18B4 /* MedicalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9D2272B02A0CA00EB18B4 /* MedicalAppApp.swift */; };
 		1DF9D22F2B02A0CA00EB18B4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9D22E2B02A0CA00EB18B4 /* SignInView.swift */; };
 		1DF9D2312B02A0CB00EB18B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF9D2302B02A0CB00EB18B4 /* Assets.xcassets */; };
@@ -30,19 +30,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D0BCDD62B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1D0BCDD72B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1D0BCDD82B30131D00C1D414 /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1D0BCDD92B30131D00C1D414 /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D25EF0A2B4A777A00C8DA30 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1D343EA22B27C3D70005E8B4 /* SMU_DB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMU_DB.xcdatamodel; sourceTree = "<group>"; };
 		1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		1D5F1D3D2B34015E00FD9BDE /* FamilyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyViewModel.swift; sourceTree = "<group>"; };
+		1D5F1D3F2B34060200FD9BDE /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FamilyModel.swift; path = MedicalApp/ViewModels/FamilyModel.swift; sourceTree = SOURCE_ROOT; };
 		1DA10D2F2B15184400B46B77 /* FamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyView.swift; sourceTree = "<group>"; };
 		1DA10D312B1532F900B46B77 /* NursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursesView.swift; sourceTree = "<group>"; };
 		1DA10D332B15332100B46B77 /* DoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorView.swift; sourceTree = "<group>"; };
 		1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		1DA10D3B2B17EFDD00B46B77 /* FamilyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyInfoView.swift; sourceTree = "<group>"; };
+		1DA10D3B2B17EFDD00B46B77 /* FamilyForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyForm.swift; sourceTree = "<group>"; };
 		1DA10D3D2B17FAD300B46B77 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1DA697052B38B6A20007D652 /* FamilyMemeberInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemeberInfo.swift; sourceTree = "<group>"; };
 		1DF9D2242B02A0CA00EB18B4 /* MedicalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF9D2272B02A0CA00EB18B4 /* MedicalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalAppApp.swift; sourceTree = "<group>"; };
 		1DF9D22E2B02A0CA00EB18B4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -68,10 +68,6 @@
 		1DF9D21B2B02A0CA00EB18B4 = {
 			isa = PBXGroup;
 			children = (
-				1D0BCDD62B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift */,
-				1D0BCDD72B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift */,
-				1D0BCDD82B30131D00C1D414 /* UserEntity+CoreDataClass.swift */,
-				1D0BCDD92B30131D00C1D414 /* UserEntity+CoreDataProperties.swift */,
 				1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */,
 				1DF9D2262B02A0CA00EB18B4 /* MedicalApp */,
 				1DF9D2252B02A0CA00EB18B4 /* Products */,
@@ -119,8 +115,10 @@
 				1DA10D2F2B15184400B46B77 /* FamilyView.swift */,
 				1DA10D312B1532F900B46B77 /* NursesView.swift */,
 				1DA10D332B15332100B46B77 /* DoctorView.swift */,
-				1DA10D3B2B17EFDD00B46B77 /* FamilyInfoView.swift */,
+				1DA10D3B2B17EFDD00B46B77 /* FamilyForm.swift */,
 				1DA10D3D2B17FAD300B46B77 /* SignUpView.swift */,
+				1DA697052B38B6A20007D652 /* FamilyMemeberInfo.swift */,
+				1D25EF0A2B4A777A00C8DA30 /* EventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +136,7 @@
 			children = (
 				1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */,
 				1D343EA42B27C8720005E8B4 /* SignUpViewModel.swift */,
+				1D5F1D3D2B34015E00FD9BDE /* FamilyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -161,6 +160,7 @@
 		1DF9D2442B02B42400EB18B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1D5F1D3F2B34060200FD9BDE /* FamilyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,23 +236,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA10D302B15184400B46B77 /* FamilyView.swift in Sources */,
+				1D5F1D3E2B34015E00FD9BDE /* FamilyViewModel.swift in Sources */,
 				1DF9D2282B02A0CA00EB18B4 /* MedicalAppApp.swift in Sources */,
+				1D25EF0B2B4A777A00C8DA30 /* EventView.swift in Sources */,
 				1DF9D2462B02C55600EB18B4 /* MainView.swift in Sources */,
 				1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */,
-				1D0BCDDA2B30131D00C1D414 /* FamilyEntity+CoreDataClass.swift in Sources */,
-				1D0BCDDC2B30131D00C1D414 /* UserEntity+CoreDataClass.swift in Sources */,
 				1DF9D2432B02B39200EB18B4 /* Extensions.swift in Sources */,
+				1DA697062B38B6A20007D652 /* FamilyMemeberInfo.swift in Sources */,
 				1DA10D3E2B17FAD300B46B77 /* SignUpView.swift in Sources */,
 				1D343EA52B27C8720005E8B4 /* SignUpViewModel.swift in Sources */,
 				1DF9D2412B02B36C00EB18B4 /* Utilitis.swift in Sources */,
 				1DF9D22F2B02A0CA00EB18B4 /* SignInView.swift in Sources */,
-				1D0BCDDB2B30131D00C1D414 /* FamilyEntity+CoreDataProperties.swift in Sources */,
 				1DA10D342B15332100B46B77 /* DoctorView.swift in Sources */,
-				1D0BCDDD2B30131D00C1D414 /* UserEntity+CoreDataProperties.swift in Sources */,
 				1DA10D382B153F0A00B46B77 /* SignInViewModel.swift in Sources */,
 				1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */,
-				1DA10D3C2B17EFDD00B46B77 /* FamilyInfoView.swift in Sources */,
+				1DA10D3C2B17EFDD00B46B77 /* FamilyForm.swift in Sources */,
 				1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */,
+				1D5F1D402B34060200FD9BDE /* FamilyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,18 @@ class CoreDataStack  {
         return  persistentContainer.viewContext
     }
     
+    func deleteFamilyMember(famMember:FamilyEntity) {
+        persistentContainer.viewContext.delete(famMember)
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
     func getAllUser() -> [UserEntity]{
-        var records : [UserEntity] = []
+        var records : [UserEntity] = [UserEntity]()
         let request: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         do {
             
@@ -31,6 +41,41 @@ class CoreDataStack  {
         
         return  records
     }
+    
+    func getFamilyRecord(firstName:String, lastName: String) -> FamilyEntity {
+        let fetchRequest: NSFetchRequest<FamilyEntity>
+        fetchRequest = FamilyEntity.fetchRequest()
+     
+        let firstName = NSPredicate(format : "firstName = %@", firstName )
+        let lastName = NSPredicate (format:
+         "lastName = %@", lastName
+        )
+        
+        fetchRequest.predicate = NSCompoundPredicate(
+            andPredicateWithSubpredicates: [
+        firstName,
+        lastName
+        ]
+        )
+        
+        let context = persistentContainer.viewContext
+        let object = try! context.fetch(fetchRequest)
+        return object.first!
+    }
+    
+    func getAllFamilyMember() -> [FamilyEntity] {
+        var records : [FamilyEntity] = []
+        
+        let recquest: NSFetchRequest<FamilyEntity> = FamilyEntity.fetchRequest()
+        do {
+            records = try viewContext.fetch(recquest)
+        }catch {
+            print("Error fetching records: \(error.localizedDescription)")
+        }
+        
+        return  records
+    }
+    
     
     func save() {
         do {

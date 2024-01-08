@@ -54,6 +54,7 @@ struct SignUpView: View {
                                                                     email: email,
                                                                     password: password
                                                                         )
+                    
 //                    print(signUpViewModel.isSignUped)
                 })
                 {

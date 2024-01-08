@@ -16,8 +16,6 @@ struct MainView: View {
     var body: some View {
         NavigationStack{
             
-    
-            
             VStack {
                   Spacer()
                   LazyVGrid(columns: columns, spacing: 8) {
@@ -53,7 +51,7 @@ struct MainView: View {
                                       .foregroundStyle(.black)
                               )
                       }
-                      NavigationLink(destination: FamilyView()) {
+                      NavigationLink(destination: EventView()) {
                           Rectangle()
                               .frame(width: 150, height: 150) // Adjust size as needed
                               .foregroundColor(.mint)
@@ -116,6 +114,18 @@ struct SquareCell: View {
 }
 
 
-//#Preview {
-//  MainView(path: )
-//}
+#Preview {
+    
+    struct Preview:View {
+        @State var path = NavigationPath()
+
+        var body: some View {
+            
+            MainView(path: $path )
+
+        }
+        
+    }
+    
+    return Preview()
+}

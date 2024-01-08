@@ -11,7 +11,7 @@ import CoreData
 
 class SignUpViewModel: ObservableObject {
     @Published var items: [UserEntity] = []
-    @Published var isSignUped = false 
+    @Published var isSignUped = false
     
     var firstName = "this is test"
     
