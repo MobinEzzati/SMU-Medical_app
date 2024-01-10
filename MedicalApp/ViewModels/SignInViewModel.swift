@@ -7,21 +7,26 @@
 
 import Foundation
 
+
 class SignInViewModel: ObservableObject {
-    var items: [UserEntity] = []
-   @Published var isExsit = false ;
+
+    @Published var isExsit = false ;
 
     func checkUserExist (userName:String , password:String) ->  Bool{
         
-
-
-         items = CoreDataStack.shared.getAllUser()
-        items.forEach { user in
-            if user.userName == userName , user.password == password {
-                isExsit = true
-            }
+        guard !userName.isEmpty, !password.isEmpty else {
+           print("UserName or Password is Nill")
             
+            return false
         }
+
+//         items = CoreDataStack.shared.getAllUser()
+//        items.forEach { user in
+//            if user.userName == userName , user.password == password {
+//                isExsit = true
+//            }
+//            
+//        }
         return isExsit
         
     }

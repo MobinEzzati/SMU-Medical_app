@@ -8,17 +8,48 @@
 import SwiftUI
 
 struct FamilyView: View {
+    @State var familyMembers :[FamilyEntity] = []
+    @State var selectName = ""
+    @State var isClik = false
+    @State  var currentIndex = 0
+    @State var currentMember  = FamilyEntity()
     var body: some View {
         NavigationStack{
            
             VStack {
+                
                 List {
-                    Text("ddf")
-                    Text("ddf")
-                    Text("ddf")
-                    Text("ddf")
-
+                    ForEach(familyMembers.indices , id: \.self) { i in
+                        
+                        HStack {
+                            Text(familyMembers[i].firstName ?? "null")
+                                               Spacer()
+                        }.onTapGesture {
+                            isClik = true
+                            currentMember = familyMembers[i]
+                        }
+                                  
+                                   
+                    
+                                    }
+                    .onDelete(perform: { indexSet in
+                                                                let famMember = familyMembers[indexSet.first!]
+                                                                CoreDataStack.shared.deleteFamilyMember(famMember: famMember)
+                                        
+                                                                familyMembers.remove(atOffsets: indexSet)
+                                })
+                   
+                    
+                                              
+                    
                 }
+                
+                .navigationTitle("FamilyView")
+                    .navigationDestination(isPresented: $isClik, destination: {
+                        FamilyMemeberInfo(famEntity: $currentMember)
+                    })
+
+
             }
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -26,7 +57,7 @@ struct FamilyView: View {
                     Button(action: {
                         
                     }, label: {
-                        NavigationLink(destination: FamilyInfoView()) {
+                        NavigationLink(destination: FamilyForm()) {
                             
                             Image(systemName: "plus.app")
                                 .resizable()
@@ -40,6 +71,11 @@ struct FamilyView: View {
                     })
                    }
             }
+            
+        }.onAppear {
+            
+            familyMembers = CoreDataStack.shared.getAllFamilyMember()
+
             
         }
     }
