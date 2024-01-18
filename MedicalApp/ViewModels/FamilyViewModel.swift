@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+@MainActor
 class FamilyViewModel : ObservableObject {
     
     @Published var isAdded = false

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-
+@MainActor
 class SignUpViewModel: ObservableObject {
     @Published var items: [UserEntity] = []
     @Published var isSignUped = false

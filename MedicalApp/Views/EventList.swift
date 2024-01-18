@@ -64,7 +64,7 @@ struct EventList: View {
                     
                     .navigationTitle("EventList")
                     .navigationDestination(isPresented: $isClik, destination: {
-                        EventInfo(event: $currentMember)
+                        EventInfo(event: $currentMember).navigationBarBackButtonHidden(true)
                     })
                 }
                 .toolbar {

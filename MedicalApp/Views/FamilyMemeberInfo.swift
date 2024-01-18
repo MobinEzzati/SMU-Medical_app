@@ -15,7 +15,7 @@ struct FamilyMemeberInfo: View {
     var items = ["FirstName","LastName", "Email","Phone Number"]
     var body: some View {
         
-        NavigationStack {
+   
             
             HStack (spacing: 100) {
                 VStack(alignment:.leading) {
@@ -37,7 +37,7 @@ struct FamilyMemeberInfo: View {
             
             Spacer()
             
-        }
+       
 
     }
 }

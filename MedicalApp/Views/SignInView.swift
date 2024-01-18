@@ -27,7 +27,7 @@ struct SignInView: View {
         NavigationStack {
             ScrollView{
                 
-            VStack(spacing:18){
+            VStack(spacing:9){
                     HStack(){
                                    
                                    Image("Earth")
@@ -67,7 +67,7 @@ struct SignInView: View {
                 
                 Spacer()
             }.frame(width:UIScreen.main.bounds.size.height
-                    ,height: UIScreen.main.bounds.size.height + 15).padding(.top)
+                    ,height: UIScreen.main.bounds.size.height + 20).padding(.top)
 
             
         }
@@ -124,29 +124,30 @@ struct UserNameAndPasswordView: View {
 
     
     var body: some View {
-        VStack(){
-            VStack (){
-                HStack(spacing: 130){
+        VStack {
+            // Username Section
+            VStack {
+                HStack(spacing: 130) {
                     Text("Username")
-                    Text("ForgetUserName?")
+                    Text("Forget UserName?")
                 }.padding(.top)
-                TextField("Enter UserName . . .", text: $userName)
+                TextField("Enter Username...", text: $userName)
                     .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-                                
+                    .overlay(RoundedRectangle(cornerRadius: 10.0)
+                        .strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
             }.padding(.horizontal)
             
-            VStack (){
-                HStack(spacing: 130){
+            // Password Section
+            VStack {
+                HStack(spacing: 130) {
                     Text("Password")
-                    Text("ForgetPassword?")
+                    Text("Forget Password?")
                 }.padding(.top)
-                
-           HybridTextField(text: $password, titleKey: "Enter your password ")
-                
+                HybridTextField(text: $password, titleKey: "Enter your password ")
             }.padding(.horizontal)
             
-            HStack{
+            // Remember Password Toggle
+            HStack {
                 Toggle(isOn: $isOn) {
                     Text("Remember Password")
                 }
@@ -154,63 +155,48 @@ struct UserNameAndPasswordView: View {
                 .padding()
                 Spacer()
             }
-            VStack{
-                
-                    Button(action: {
-                        signInVm.checkUserExist(userName: userName,
-                                                password: password)
-                        
-                        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-                        print(paths[0])
-
-                        
-                    }) {
-                    
-                            Text("Log in ")
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .font(.system(size: 18))
-                                .padding()
-                                .foregroundColor(.white)
-                            
-                        
-                        
-                        
-                    }
-                    .background(Color.gray) // If you have this
-                    .cornerRadius(10)
-                    .padding()
-                    
-                
-    
-  
-                
-                HStack(spacing: 120) {
-                    VStack {
-                        Image(systemName: "questionmark.circle")
-                        Text("Need Help")
-                    }
-                    NavigationLink( destination: SignUpView()) {
-                        
-                        VStack {
-                            
-                            Image(systemName: "person.badge.plus")
-                            Text("Sign Up")
-                        }
-                        
-                    }.foregroundStyle(.black)
-
-
+            
+            // Login Button
+            VStack {
+                Button(action: {
+                    signInVm.checkUserExist(userName: userName, password: password)
+                    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+                    print(paths[0])
+                }) {
+                    Text("Log in")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .font(.system(size: 18))
+                        .padding()
+                        .foregroundColor(.white)
                 }
-            }.navigationDestination(
-                isPresented: $signInVm.isExsit,
-                destination: {
-                    MainView(path: $mainPath)
-                })
-        }.frame(width: screenWidth - 10, height: screenHeight/3 + 50)
-        VStack(alignment:.trailing){
+                .background(Color.gray)
+                .cornerRadius(10)
+                .padding()
+            }
+            
+            // Help and Sign-Up Section
+            HStack(spacing: 120) {
+                VStack {
+                    Image(systemName: "questionmark.circle")
+                    Text("Need Help")
+                }
+                NavigationLink(destination: SignUpView()) {
+                    VStack {
+                        Image(systemName: "person.badge.plus")
+                        Text("Sign Up")
+                    }
+                }.foregroundStyle(.black)
+            }
+        }.navigationDestination(isPresented: $signInVm.isExsit) {
+            MainView(path: $mainPath).navigationBarBackButtonHidden(true)
+        }
+        .frame(width: screenWidth - 10, height: screenHeight/3 + 50)
+
+        // Additional InfoCell
+        VStack(alignment: .trailing) {
             InfoCell()
         }.frame(width: 380)
-            .padding()
+         .padding()
         
     }
     

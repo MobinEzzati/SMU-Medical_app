@@ -20,13 +20,13 @@ class SignInViewModel: ObservableObject {
             return false
         }
 
-//         items = CoreDataStack.shared.getAllUser()
-//        items.forEach { user in
-//            if user.userName == userName , user.password == password {
-//                isExsit = true
-//            }
-//            
-//        }
+        let items = CoreDataStack.shared.getAllUser()
+        items.forEach { user in
+            if user.userName == userName , user.password == password {
+                isExsit = true
+            }
+            
+        }
         return isExsit
         
     }
