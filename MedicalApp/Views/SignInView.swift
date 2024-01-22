@@ -20,6 +20,7 @@ import SwiftUI
 struct SignInView: View {
     @Binding var path: NavigationPath
     @State var mainPath = NavigationPath()
+    @State var gotoSignUp = false
 
     
     var body: some View {
@@ -180,12 +181,13 @@ struct UserNameAndPasswordView: View {
                     Image(systemName: "questionmark.circle")
                     Text("Need Help")
                 }
+                
                 NavigationLink(destination: SignUpView()) {
                     VStack {
                         Image(systemName: "person.badge.plus")
                         Text("Sign Up")
                     }
-                }.foregroundStyle(.black)
+                }.navigationBarBackButtonHidden(false).foregroundStyle(.black)
             }
         }.navigationDestination(isPresented: $signInVm.isExsit) {
             MainView(path: $mainPath).navigationBarBackButtonHidden(true)

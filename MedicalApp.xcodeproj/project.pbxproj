@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1D48952B5F2F7500B94CC7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D48942B5F2F7500B94CC7 /* Toast.swift */; };
 		1D25EF0B2B4A777A00C8DA30 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D25EF0A2B4A777A00C8DA30 /* EventList.swift */; };
 		1D343EA02B27C0BA0005E8B4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */; };
 		1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D343EA12B27C3D70005E8B4 /* SMU_DB.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D1D48942B5F2F7500B94CC7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		1D25EF0A2B4A777A00C8DA30 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		1D343E9F2B27C0BA0005E8B4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1D343EA22B27C3D70005E8B4 /* SMU_DB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMU_DB.xcdatamodel; sourceTree = "<group>"; };
@@ -73,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1D48922B5F2EF400B94CC7 /* CustomComponent */ = {
+			isa = PBXGroup;
+			children = (
+				1D1D48932B5F2F2E00B94CC7 /* Toast */,
+			);
+			path = CustomComponent;
+			sourceTree = "<group>";
+		};
+		1D1D48932B5F2F2E00B94CC7 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				1D1D48942B5F2F7500B94CC7 /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		1DF9D21B2B02A0CA00EB18B4 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +111,7 @@
 		1DF9D2262B02A0CA00EB18B4 /* MedicalApp */ = {
 			isa = PBXGroup;
 			children = (
+				1D1D48922B5F2EF400B94CC7 /* CustomComponent */,
 				1DF9D2442B02B42400EB18B4 /* Models */,
 				1DF9D23F2B02B30700EB18B4 /* Extensions */,
 				1DF9D23E2B02B2F400EB18B4 /* Utilitis */,
@@ -268,6 +287,7 @@
 				1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */,
 				1DA10D3C2B17EFDD00B46B77 /* FamilyForm.swift in Sources */,
 				1D343EA32B27C3D70005E8B4 /* SMU_DB.xcdatamodeld in Sources */,
+				1D1D48952B5F2F7500B94CC7 /* Toast.swift in Sources */,
 				1D5F1D402B34060200FD9BDE /* FamilyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,11 +15,21 @@ struct SignUpView: View {
     @State  private var confirmPassword = ""
     @State  private var email = ""
     @State  private var isExsits = false
-    @State var path = NavigationPath()
-    @State var gotoMaineView = false
-    @ObservedObject  var signUpViewModel = SignUpViewModel()
 
-    
+    @State var path = NavigationPath()
+    @State var gotoLoginView = false
+    @ObservedObject  var signUpViewModel = SignUpViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var btnBack : some View { Button(action: {
+          self.presentationMode.wrappedValue.dismiss()
+          }) {
+              HStack {
+   
+                  Text("< back")
+              }
+          }
+      }
+      
     var body: some View {
         
         
@@ -54,6 +64,7 @@ struct SignUpView: View {
                                                                     email: email,
                                                                     password: password
                                                                         )
+                    gotoLoginView = signUpViewModel.isSignUped
                     
 //                    print(signUpViewModel.isSignUped)
                 })
@@ -78,11 +89,14 @@ struct SignUpView: View {
                 
             }.navigationTitle("Sign Up")
                 .padding()
+                .navigationBarBackButtonHidden(true)
                 .navigationDestination(
-                    isPresented: $signUpViewModel.isSignUped,
+                    isPresented: $gotoLoginView,
                     destination: {
                         SignInView(path: $path)
                     })
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: btnBack)
         }
     }
 }
