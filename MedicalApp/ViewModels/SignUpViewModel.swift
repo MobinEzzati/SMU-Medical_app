@@ -11,12 +11,17 @@ import CoreData
 @MainActor
 class SignUpViewModel: ObservableObject {
     @Published var items: [UserEntity] = []
-    @Published var isSignUped = false
+    @Published var isSignUped: Bool = false
+    @Published var isTest: Bool = false
+
     
-    var firstName = "this is test"
     
-    
+    func istest() {
+        
+        isTest = true 
+    }
     func addUser(userName: String, firstName: String, lastName: String, email: String, password: String) {
+        
         guard !userName.isEmpty,
               !firstName.isEmpty,
               !lastName.isEmpty,
@@ -37,17 +42,15 @@ class SignUpViewModel: ObservableObject {
             user.password = password
 
             CoreDataStack.shared.save()
-            Task {
- 
-                try await Task.sleep(nanoseconds: 1_000_000_000)
-                isSignUped = true
-
-            }
+     
             print("We Created new user in our database ")
+            isSignUped = true
 
         } else {
             print("We already have this item in our database")
         }
+        
+        
     }
 
     func checkDublication(userName:String) -> Bool{

@@ -20,7 +20,7 @@ struct MainView: View {
                   Spacer()
                   LazyVGrid(columns: columns, spacing: 8) {
                       
-                      NavigationLink(destination: FamilyView()){
+                      NavigationLink(destination: FamilyList()){
                           Rectangle()
                               .frame(width: 150, height: 150) // Adjust size as needed
                               .foregroundColor(.mint)
@@ -81,7 +81,7 @@ struct SquareCell: View {
             switch relatedMembersName {
                 
             case "Family" : 
-                NavigationLink(destination: FamilyView()) {
+                NavigationLink(destination: FamilyList()) {
                     Rectangle()
                         .frame(width: 150, height: 150) // Adjust size as needed
                         .foregroundColor(.mint)
@@ -95,7 +95,7 @@ struct SquareCell: View {
                 
                 
             default:
-                NavigationLink(destination: FamilyView()) {
+                NavigationLink(destination: FamilyList()) {
                     Rectangle()
                         .frame(width: 150, height: 150) // Adjust size as needed
                         .foregroundColor(.mint)

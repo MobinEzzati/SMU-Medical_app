@@ -25,3 +25,10 @@ extension String {
         return emailPred.evaluate(with: self)
     }
 }
+
+
+extension UserNameAndPasswordView {
+    func didDismiss() {
+        print("Dismissed View")
+    }
+}

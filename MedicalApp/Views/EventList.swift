@@ -24,7 +24,6 @@ struct EventList: View {
 
     var body: some View {
         
-        NavigationStack {
             
             VStack {
                 
@@ -64,7 +63,7 @@ struct EventList: View {
                     
                     .navigationTitle("EventList")
                     .navigationDestination(isPresented: $isClik, destination: {
-                        EventInfo(event: $currentMember).navigationBarBackButtonHidden(true)
+                        EventInfo(event: $currentMember).navigationBarBackButtonHidden(false)
                     })
                 }
                 .toolbar {
@@ -93,7 +92,7 @@ struct EventList: View {
             })
             
             
-        }
+        
     }
     
 

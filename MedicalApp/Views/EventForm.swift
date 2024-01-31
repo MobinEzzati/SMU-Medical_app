@@ -34,7 +34,7 @@ struct EventForm: View {
                 
                 EventList()
                 
-            }.navigationBarBackButtonHidden(true)
+            }
             .navigationBarTitle("Event Name")
         }
     }

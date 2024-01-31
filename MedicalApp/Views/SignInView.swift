@@ -120,6 +120,8 @@ struct UserNameAndPasswordView: View {
     @State private var isSecureText = false
     @ObservedObject var signInVm = SignInViewModel()
     @State var mainPath = NavigationPath()
+    @State var gotoSignUp = false
+
 
 
 
@@ -176,22 +178,36 @@ struct UserNameAndPasswordView: View {
             }
             
             // Help and Sign-Up Section
+
+
             HStack(spacing: 120) {
                 VStack {
                     Image(systemName: "questionmark.circle")
                     Text("Need Help")
                 }
                 
-                NavigationLink(destination: SignUpView()) {
+                Button {
+                gotoSignUp = true
+                    
+                } label: {
                     VStack {
                         Image(systemName: "person.badge.plus")
                         Text("Sign Up")
                     }
-                }.navigationBarBackButtonHidden(false).foregroundStyle(.black)
+                }
+                
+//                NavigationLink(destination: SignUpView()) {
+//                    VStack {
+//                        Image(systemName: "person.badge.plus")
+//                        Text("Sign Up")
+//                    }
+//                }.navigationBarBackButtonHidden(false).foregroundStyle(.black)
             }
         }.navigationDestination(isPresented: $signInVm.isExsit) {
             MainView(path: $mainPath).navigationBarBackButtonHidden(true)
-        }
+        }.fullScreenCover(isPresented: $gotoSignUp, onDismiss: didDismiss, content: {
+            SignUpView()
+        })
         .frame(width: screenWidth - 10, height: screenHeight/3 + 50)
 
         // Additional InfoCell

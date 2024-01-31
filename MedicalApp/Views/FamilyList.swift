@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct FamilyView: View {
+struct FamilyList: View {
     @State var familyMembers :[FamilyEntity] = []
     @State var selectName = ""
     @State var isClik = false
     @State  var currentIndex = 0
     @State var currentMember  = FamilyEntity()
     var body: some View {
-        NavigationStack{
-           
+
             VStack {
                 
                 List {
@@ -44,7 +43,7 @@ struct FamilyView: View {
                     
                 }
                 
-                .navigationTitle("FamilyView")
+                .navigationTitle("FamilyList")
                     .navigationDestination(isPresented: $isClik, destination: {
                         FamilyMemeberInfo(famEntity: $currentMember)
                     })
@@ -70,17 +69,15 @@ struct FamilyView: View {
                             
                     })
                    }
+            }.onAppear {
+                familyMembers = CoreDataStack.shared.getAllFamilyMember()
+
             }
             
-        }.onAppear {
-            
-            familyMembers = CoreDataStack.shared.getAllFamilyMember()
-
-            
-        }
+        
     }
 }
 
 #Preview {
-    FamilyView()
+    FamilyList()
 }

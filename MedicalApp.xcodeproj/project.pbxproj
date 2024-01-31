@@ -18,7 +18,7 @@
 		1D7CDC372B4CA6D20041502B /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CDC362B4CA6D20041502B /* EventViewModel.swift */; };
 		1D7CDC392B4CAE350041502B /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CDC382B4CAE350041502B /* EventModel.swift */; };
 		1D7CDC3B2B4CC0850041502B /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CDC3A2B4CC0850041502B /* EventInfo.swift */; };
-		1DA10D302B15184400B46B77 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D2F2B15184400B46B77 /* FamilyView.swift */; };
+		1DA10D302B15184400B46B77 /* FamilyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D2F2B15184400B46B77 /* FamilyList.swift */; };
 		1DA10D322B1532F900B46B77 /* NursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D312B1532F900B46B77 /* NursesView.swift */; };
 		1DA10D342B15332100B46B77 /* DoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D332B15332100B46B77 /* DoctorView.swift */; };
 		1DA10D382B153F0A00B46B77 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */; };
@@ -46,7 +46,7 @@
 		1D7CDC362B4CA6D20041502B /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		1D7CDC382B4CAE350041502B /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = MedicalApp/ViewModels/EventModel.swift; sourceTree = SOURCE_ROOT; };
 		1D7CDC3A2B4CC0850041502B /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
-		1DA10D2F2B15184400B46B77 /* FamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyView.swift; sourceTree = "<group>"; };
+		1DA10D2F2B15184400B46B77 /* FamilyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyList.swift; sourceTree = "<group>"; };
 		1DA10D312B1532F900B46B77 /* NursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursesView.swift; sourceTree = "<group>"; };
 		1DA10D332B15332100B46B77 /* DoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorView.swift; sourceTree = "<group>"; };
 		1DA10D372B153F0A00B46B77 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				1DF9D2272B02A0CA00EB18B4 /* MedicalAppApp.swift */,
 				1DF9D22E2B02A0CA00EB18B4 /* SignInView.swift */,
 				1DF9D2452B02C55600EB18B4 /* MainView.swift */,
-				1DA10D2F2B15184400B46B77 /* FamilyView.swift */,
+				1DA10D2F2B15184400B46B77 /* FamilyList.swift */,
 				1DA10D312B1532F900B46B77 /* NursesView.swift */,
 				1DA10D332B15332100B46B77 /* DoctorView.swift */,
 				1DA10D3B2B17EFDD00B46B77 /* FamilyForm.swift */,
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D7CDC352B4C9DB00041502B /* EventForm.swift in Sources */,
-				1DA10D302B15184400B46B77 /* FamilyView.swift in Sources */,
+				1DA10D302B15184400B46B77 /* FamilyList.swift in Sources */,
 				1D5F1D3E2B34015E00FD9BDE /* FamilyViewModel.swift in Sources */,
 				1DF9D2282B02A0CA00EB18B4 /* MedicalAppApp.swift in Sources */,
 				1D7CDC3B2B4CC0850041502B /* EventInfo.swift in Sources */,

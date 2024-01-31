@@ -15,9 +15,9 @@ struct FamilyForm: View {
     @State private var email: String = ""
     @State private var username: String = ""
     @State var path = NavigationPath()
+    let dropDownItem = ["Son", "daughter","Friend","GrandChildren", "Personal Assistant/Lawyer"]
     @ObservedObject var familyVM = FamilyViewModel()
-
-
+    
     var body: some View {
         NavigationStack {
             
@@ -28,64 +28,84 @@ struct FamilyForm: View {
                 TextField("Enter your LastName . . .", text: $lastName)
                     .padding()
                     .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-                TextField("what is your relationship . . .", text: $relationShip)
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-                TextField("Enter your phone number  . . .", text: $phoneNumber)
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-                TextField("Enter your email . . .",
-                          text: $email)
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-                Button(action: {
-                    
-                    
-                    let familyMember = FamilyModel(
-                        id: UUID(),
-                        firstName: firstName,
-                        lastName: lastName,
-                        relationship: relationShip,
-                        email: email, 
-                        phoneNumber: phoneNumber)
+                
+                HStack {
 
-                    
-                    familyVM.addFamilyMember(familyModel: familyMember)
-                })
-                {
-                    
-          
-                    
-                    Text("Add")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .font(.system(size: 18))
+                    Menu {
+                        ForEach(dropDownItem, id: \.self){ item in
+                            Button(item) {
+                                self.relationShip = item
+                            }
+                        }
+                    } label: {
+                        VStack(spacing: 5){
+                            Image(systemName: "chevron.down")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                        }
+                    }
+                    TextField("what is your relationship . . .", text: $relationShip)
                         .padding()
-                        .foregroundColor(.white)
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                     
-     
                     
                 }
-                .background(Color.gray)
-                .cornerRadius(10)
-                .padding()
-     
-
-
-            }
+                    
+                    TextField("Enter your phone number  . . .", text: $phoneNumber)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
+                    TextField("Enter your email . . .",
+                              text: $email)
+                    .padding()
+                    .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
+                    Button(action: {
+                        
+                        
+                        let familyMember = FamilyModel(
+                            id: UUID(),
+                            firstName: firstName,
+                            lastName: lastName,
+                            relationship: relationShip,
+                            email: email,
+                            phoneNumber: phoneNumber)
+                        
+                        
+                        familyVM.addFamilyMember(familyModel: familyMember)
+                    })
+                    {
+                        
+                        
+                        
+                        Text("Add")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .font(.system(size: 18))
+                            .padding()
+                            .foregroundColor(.white)
+                        
+                        
+                        
+                    }
+                    .background(Color.gray)
+                    .cornerRadius(10)
+                    .padding()
+                    
+                    
+                    
+                }
                 .font(.footnote)
                 .navigationTitle("Family Information")
                 .navigationDestination(isPresented:
                                         $familyVM.isAdded,
                                        destination: {
-                    FamilyView()
+                    FamilyList()
                 })
-        
+                
                 .padding()
-    
-            
+                
+                
+            }
         }
     }
-}
 
 #Preview {
     FamilyForm()
